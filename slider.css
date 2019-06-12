@@ -1,0 +1,18 @@
+.slider-container {
+    width: 100%;
+    border: 1px solid red;
+    display: block;
+    position:relative;
+    overflow: hidden;
+}
+
+.slider-item {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.slider-item img {
+    width: 100%;
+}
