@@ -1,7 +1,7 @@
 # slider
 dom结构<br/>
-\<div class="scrollBox">
-        \<ul class="slider-container">
+                \<div class="scrollBox">
+                                \<ul class="slider-container">
             \<li class="slider-item">
                 \<img src="./images/banner1.jpg"/>
             \</li>
