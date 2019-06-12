@@ -1,5 +1,5 @@
 # slider
-##dom结构
+dom结构<br/>
 \<div class="scrollBox">
         \<ul class="slider-container">
             \<li class="slider-item">
