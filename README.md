@@ -1,20 +1,20 @@
 # slider
-#dom结构
-<div class="scrollBox">
-        <ul class="slider-container">
-            <li class="slider-item">
-                <img src="./images/banner1.jpg"/>
-            </li>
-            <li class="slider-item">
-                <img src="./images/banner2.jpg"/>
-            </li>
-            <li class="slider-item">
-                <img src="./images/banner3.jpg"/>
-            </li>
-        </ul>
-        <button>上一页</button>
-        <button>下一页</button>
-    </div>
+##dom结构
+\<div class="scrollBox">
+        \<ul class="slider-container">
+            \<li class="slider-item">
+                \<img src="./images/banner1.jpg"/>
+            \</li>
+            \<li class="slider-item">
+                \<img src="./images/banner2.jpg"/>
+            \</li>
+            \<li class="slider-item">
+                \<img src="./images/banner3.jpg"/>
+            \</li>
+        \</ul>
+        \<button>上一页</button>
+        \<button>下一页</button>
+    \</div>
     #使用
     window.onload = function () {
             const scroll = new Slider('.scrollBox',{
