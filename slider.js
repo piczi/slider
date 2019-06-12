@@ -109,7 +109,7 @@
             this.items = sliderOrders._getSliders();
             sliderOrders._changeItemsPosition(this.items[0],-100);
 
-            this.timer = null;
+            this.timer = void 0;
             this.container = sliderOrders.getContainer('.slider-container');
             this.startX = null;
             this.moveX = null;
@@ -118,7 +118,7 @@
 
             this._checkIsTouch();
 
-            this._pageStateListener(this.timer);
+            this._pageStateListener();
         },
 
         _isPageInView: function () {
@@ -236,15 +236,11 @@
             this._stopScroll(this.timer);
             sliderOrders.initPrePage();
             this._turnOnePage('pre');
-            this.timer = this.beginInterval();
+            options.autoPlay && (this.timer = this.beginInterval());
         },
 
         beginInterval: function () {
-            var timer = null;
-
-            if (options.autoPlay) {
-                this.timer = this._changePage();
-            }
+            var timer = this._changePage();
 
             return timer;
         },
@@ -254,7 +250,7 @@
             sliderOrders.reviewEvent('scrollStart');
             this._stopScroll(this.timer);
             this._turnOnePage();
-            this.timer = this.beginInterval();
+            options.autoPlay && (this.timer = this.beginInterval());
         },
 
         _changePage: function () {
@@ -265,7 +261,7 @@
                 sliderOrders.reviewEvent('scrollStart');
                 self._turnOnePage();
 
-            },opations.delay || 5000);
+            },options.delay || 5000);
 
             return timer;
         },
@@ -278,13 +274,12 @@
         _pageStateListener: function () {
             var status = sliderOrders._isPageInView();
             var self = this;
-
             document.addEventListener(status.visibilityChange,function () {
                 if (document[status.hidden]) {
                     self._stopScroll(self.timer);
                     console.log('用户关闭');
                 } else {
-                    self.timer = this.beginInterval();
+                    options.autoPlay && (self.timer = self.beginInterval());
                     console.log('用户浏览');
                 }
             },false)
@@ -322,7 +317,7 @@
                 this._turnOnePage('pre');
             }
 
-            this.timer = this.beginInterval();
+            options.autoPlay && (this.timer = this.beginInterval());
 
             this.startX = null;
         },
